@@ -7,15 +7,15 @@ const UserCard = (props) => {
 
   return (
     <>
-    <tr className='' data-toggle="modal" data-target={"#user" + props.cardId}>
+    <tr data-toggle="modal" data-target={"#user" + props.cardId}>
       
-      <td scope='col'> {card.id} </td>
+      <td> {card.id} </td>
 
-      <td scope='col'> {card.name} </td>
+      <td> {card.name} </td>
 
-      <td scope='col'> {card.email} </td>
+      <td> {card.email} </td>
 
-      <td scope='col'> {card.invest} </td>
+      <td> {card.invest} </td>
     
     </tr>
 

@@ -42,13 +42,13 @@ const UserInfo = (props) => {
                   </thead>
                   <tbody>
                       <tr>
-                        <td scope='col'> {transaction.pName} </td>
-                        <td scope='col'> {transaction.amount} </td>
+                        <td> {transaction.pName} </td>
+                        <td> {transaction.amount} </td>
                       </tr>
                   </tbody>
                   <tfoot> 
                     <tr>
-                      <td scope='col'> Invested Amount : {card.invest} </td>
+                      <td> Invested Amount : {card.invest} </td>
                     </tr>
                   </tfoot>
                 </table>

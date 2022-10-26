@@ -4,8 +4,6 @@ import { Label,  Input } from '../../components/formComponents';
 
 
 const ChangePwd = () => {
-
-  const navigate = useNavigate();
   
   return (
     <>

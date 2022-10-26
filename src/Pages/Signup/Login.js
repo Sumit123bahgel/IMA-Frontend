@@ -10,10 +10,10 @@ const Login = () => {
         password : ''
     });
 
-    const [isWrong, setIsWrong] = useState({
-        email : '',
-        password : ''
-    });
+    // const [isWrong, setIsWrong] = useState({
+    //     email : '',
+    //     password : ''
+    // });
 
     
 

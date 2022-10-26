@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from '../navbar/navbar';
 import plansData from '../../data/plans_data';
 import PlanCard from './plans_card';
-import { useNavigate } from 'react-router-dom';
 import CreateNewPlan from './createNewPlan';
 
 const Plans = () => {
@@ -17,13 +16,6 @@ const Plans = () => {
       maturity = {card.maturity}
       users = {card.users}
     />
-  }
-
-  const navigate = useNavigate();
-
-  function handleNewPlan(){
-    let path = '/create-new-plan';
-    navigate(path);
   }
 
   return (
