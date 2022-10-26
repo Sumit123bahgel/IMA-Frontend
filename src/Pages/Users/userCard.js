@@ -7,7 +7,7 @@ const UserCard = (props) => {
 
   return (
     <div>
-    <div className='d-flex justify-content-around align-items-center h5 border row my-3 p-2 btn btn-light' data-toggle="modal" data-target={"#user" + props.cardId}>
+    <div className='d-flex justify-content-around align-items-center h5 border row my-2 mx-1 p-2 btn btn-light rounded' data-toggle="modal" data-target={"#user" + props.cardId}>
       
       <img src={card.img} alt="img" className='rounded-circle' style={{width : '80px'}}/>
 
@@ -19,7 +19,7 @@ const UserCard = (props) => {
     
     </div>
 
-    <UserInfo user = {card} cardId = {"#user" + props.cardId} />
+    <UserInfo user = {card} cardId = {"user" + props.cardId} />
 
     </div>
   )

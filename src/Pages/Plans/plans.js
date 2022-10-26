@@ -3,6 +3,7 @@ import Navbar from '../navbar/navbar';
 import plansData from './plans_data';
 import PlanCard from './plans_card';
 import { useNavigate } from 'react-router-dom';
+import CreateNewPlan from './createNewPlan';
 
 const Plans = () => {
 
@@ -34,8 +35,9 @@ const Plans = () => {
       <div className='d-flex justify-content-between align-items-center text-uppercase'>
 
         <h2 className='text-dark '>All Plans</h2>
-        <button className='btn btn-primary btn-success' onClick={handleNewPlan}>Create New Plan</button>
-
+        <button className='btn btn-primary btn-success' data-toggle="modal" data-target="#createPlan" >Create New Plan</button>
+        
+        <CreateNewPlan/>
       </div>
 
       <div className='d-flex text-capitalize justify-content-left my-3 flex-lg-row flex-column row'>
@@ -45,7 +47,6 @@ const Plans = () => {
         })}
 
       </div>
-      
     </div>
     </>
   )

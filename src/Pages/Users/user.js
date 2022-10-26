@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../navbar/navbar';
 import UserCard from './userCard.js';
 import userData from './userData.js';
+import { Input } from '../../components/formComponents';
 
 const User = () => {
   return (
@@ -13,7 +14,9 @@ const User = () => {
 
       <div className='d-flex my-3'>
         <h3>Search</h3>
-        <input type="text" name="search_user" placeholder='Search for a user'  className='form-control mx-2'/>
+
+        <Input type="text" name="search_user" placeholder='Search for a user'  className='form-control mx-2'/>
+        
       </div>
 
       <div>

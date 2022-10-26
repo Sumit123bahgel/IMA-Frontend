@@ -1,25 +1,24 @@
-import React from 'react'
+import React from 'react';
 
 const UserInfo = (props) => {
 
     const card = props.user;
-    const cardId = props.cardId.substr(1);
 
   return (
     <>
-        <div class="modal fade" id={cardId} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
+        <div className="modal fade" id={props.cardId}  tabIndex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
 
-                <h5 class="modal-title" id="exampleModalLongTitle"> {card.name} </h5>
+                <h5 className="modal-title" id="ModalLongTitle"> User Information </h5>
 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
 
-              <div class="modal-body d-flex justify-content-center flex-column align-items-center">
+              <div className="modal-body d-flex justify-content-center flex-column align-items-center">
 
                 <img src={card.img} alt="img" className='rounded-circle my-3' style={{width : "100px"}}/>
 
@@ -35,7 +34,12 @@ const UserInfo = (props) => {
                 </div>
 
               </div>
-              
+
+              <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger">Delete User</button>
+              </div>
+
             </div>
           </div>
         </div> 
@@ -43,4 +47,4 @@ const UserInfo = (props) => {
   )
 }
 
-export default UserInfo
+export default UserInfo;

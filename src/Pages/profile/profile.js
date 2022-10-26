@@ -1,7 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
-
+import EditProfile from './editProfile';
+import ChangePwd from './ChangePwd';
 import data from './data.js';
 
 
@@ -28,12 +29,13 @@ const Profile = () => {
 
       <div className='w-100 text-center'>
 
-        <button type="button" className="btn btn-primary btn-lg m-3" onClick={()=> navigate('/update_profile')} >Edit Profile</button>
-        
-        <button type="button" className="btn btn-secondary btn-lg m-3" onClick={()=> navigate('/change_password')}>Change Password</button>
+        <button type="button" className="btn btn-primary btn-lg m-3" data-toggle="modal" data-target="#editProfile" >Edit Profile</button>
+        <button type="button" className="btn btn-secondary btn-lg m-3" data-toggle="modal" data-target="#cngPwd">Change Password</button>
         
       </div>
 
+        <EditProfile/>       
+        <ChangePwd/>
 
     </div>
 

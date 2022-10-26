@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Input, Label } from '../../components/formComponents';
 
 const Forgotpwd = () => {
   const [email,setEmail] = useState('');
@@ -22,6 +23,7 @@ const Forgotpwd = () => {
     }
 
     const navigate= useNavigate();
+    
     function Loginpage(){
         let path  = '/';
         navigate(path);
@@ -34,18 +36,17 @@ const Forgotpwd = () => {
 
       <div className='d-flex justify-center text-center align-items-center flex-column w-50 form-group'>
         
-        <label htmlFor='email'  class="col-form-label col-form-label-lg text-center text-capitalize mb-5">Email address</label>
+        <Label for='email'  className="col-form-label col-form-label-lg text-center text-capitalize mb-5 h2" content= "Email address"/>
 
-        <input type="email" name='email' value={email} onChange={handleChange} class="form-control p-3 mb-5"  placeholder="Enter your email address"></input>
+        <Input type="email" name='email' value={email} onChange={handleChange} className="form-control p-3 mb-5"  placeholder="Enter your email address"/>
 
-        <button className="btn btn-primary w-50" onClick={handleClick}>Send a mail</button>
+        <button className="btn btn-primary w-50 my-2" onClick={handleClick}>Send a mail</button>
 
-        <p className="text-capitalize">
+        <button className="btn btn-secondary w-50 my-2" disabled = {login} onClick={Loginpage}>login</button>
+
+        <p className="text-capitalize text-success h4">
           {succesmsg}
         </p>
-
-
-        <button className="btn btn-secondary w-50" disabled = {login} onClick={Loginpage}>login</button>
 
       </div>
 
