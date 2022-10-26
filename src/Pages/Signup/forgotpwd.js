@@ -32,13 +32,15 @@ const Forgotpwd = () => {
             </button>
           </div>
           <div className="modal-body">
-            
-            <div className="form-group text-center">
-      
-              <Label for='email'  classNameName="col-form-label col-form-label-lg text-center text-capitalize mb-2 h2" content= "Email address"/>
-      
-              <Input type="email" name='email' value={email} onChange={handleChange} classNameName="form-control p-3"  placeholder="Enter your email address"/>
-            </div>
+            <form>
+
+              <div className="form-group">
+
+                <Label for = "email" content = "Email Address" />
+
+                <Input type="email" name="email" className="form-control"  areaDesBy="emailHelp" value={email} onChange={handleChange} placeholder='Enter Your Email id'/>
+              </div>
+            </form>
       
             <p classNameName="text-capitalize text-success">
               {succesmsg}
