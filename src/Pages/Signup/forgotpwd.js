@@ -33,7 +33,7 @@ const Forgotpwd = () => {
           </div>
           <div className="modal-body">
             
-            <div classNameName="form-group text-center">
+            <div className="form-group text-center">
       
               <Label for='email'  classNameName="col-form-label col-form-label-lg text-center text-capitalize mb-2 h2" content= "Email address"/>
       
