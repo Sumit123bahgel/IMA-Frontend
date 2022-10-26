@@ -21,7 +21,7 @@ const User = () => {
         </div>
       </div>
     
-      <table className='table table-bordered table-hover table-responsive-lg mt-3'>
+      <table className='table table-bordered table-hover table-responsive-lg mt-3 table-striped'>
         <thead>
           <tr>
             <th scope='col'> User Id </th>
