@@ -51,7 +51,7 @@ const Login = () => {
 
           <Input type="email" name="email" className="form-control"  areaDesBy="emailHelp" value={emailPwd.email} onChange={handleChange} placeholder='Enter Your Email id'/>
 
-          <p>{isWrong.email}</p>
+          {/* <p>{isWrong.email}</p> */}
         </div>
 
 
@@ -60,7 +60,7 @@ const Login = () => {
 
           <Input type="password" name="password" className="form-control" value={emailPwd.password} onChange={handleChange} placeholder='Password'/>
 
-          <p>{isWrong.password}</p>
+          {/* <p>{isWrong.password}</p> */}
 
         </div>
 
