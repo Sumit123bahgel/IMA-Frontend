@@ -3,6 +3,7 @@ import React from 'react';
 const UserInfo = (props) => {
 
     const card = props.user;
+    const transaction = props.user.transaction;
 
   return (
     <>
@@ -11,27 +12,46 @@ const UserInfo = (props) => {
             <div className="modal-content">
               <div className="modal-header">
 
-                <h5 className="modal-title" id="ModalLongTitle"> User Information </h5>
+                <h5 className="modal-title" id="ModalLongTitle"> Investor Information </h5>
 
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
 
-              <div className="modal-body d-flex justify-content-center flex-column align-items-center">
+              <div className="modal-body d-flex  flex-column ">
 
-                <img src={card.img} alt="img" className='rounded-circle my-3' style={{width : "100px"}}/>
-
-                <h1> {card.name} </h1>
+                <h1 className='text-center'> {card.name} </h1>
                 
                 <div>
                     <p> Email-id : <span> {card.email} </span> </p>
-                    <p> Invested Amount : <span> {card.invest} </span> </p>
                     <p> Password : <span> {card.password} </span> </p>
                     <p> Address : <span> {card.address} </span> </p>
                     <p> Phone : <span> {card.phone} </span> </p>
                     <p> Date Of Birth : <span> {card.dob} </span> </p>
                 </div>
+                
+                <h4>All transactions</h4>
+
+                <table class='table table-bordered table-hover table-responsive-lg h-20'>
+                  <thead>
+                    <tr> 
+                      <th scope='col'> Plan Name </th>
+                      <th scope='col'> Amount </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td scope='col'> {transaction.pName} </td>
+                        <td scope='col'> {transaction.amount} </td>
+                      </tr>
+                  </tbody>
+                  <tfoot> 
+                    <tr>
+                      <td scope='col'> Invested Amount : {card.invest} </td>
+                    </tr>
+                  </tfoot>
+                </table>
 
               </div>
 

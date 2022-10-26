@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import data from '../profile/data.js';
+import peopleData from '../../data/peopleData';
 
 
 const Navbar = (props) => {
+  const data = peopleData[0];
   
   const [pageSize, setPage] = useState( window.innerWidth );
 
@@ -70,6 +71,9 @@ const Navbar = (props) => {
               <Link className="nav-link p-2" to="/users_all">Users</Link>
 
               <Link className="nav-link p-2" to="/plans_all">Plans</Link>
+
+              <Link className="nav-link p-2" to="/people">People</Link>
+
             </div>
 
         </div>

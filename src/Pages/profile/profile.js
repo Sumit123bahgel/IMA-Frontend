@@ -1,13 +1,13 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
 import EditProfile from './editProfile';
 import ChangePwd from './ChangePwd';
-import data from './data.js';
+import peopleData from '../../data/peopleData';
 
 
 const Profile = () => {
-  const navigate = useNavigate();
+  
+  const data = peopleData[0];
 
   return (
     <>
@@ -18,12 +18,17 @@ const Profile = () => {
         <h1 className='mb-5'>Your Profile</h1>
 
         <div className='d-flex justify-content-center align-items-center flex-lg-row flex-column p-3 w-100'>
+          
           <img src={data.img} alt="img" className='rounded-lg' style={{width : '200px'}}/>
+
           <div className='h5 text-primary m-5'>
+
             <p> Name : <span className='text-success'> {data.name} </span> </p>
             <p> Email id : <span className='text-success'> {data.email} </span></p>
             <p> Phone : <span className='text-success'> {data.phone} </span> </p>
             <p> Password : <span className='text-success'> {data.password} </span></p>
+            <p> Role : <span className='text-success'> {data.role} </span></p>
+
           </div>
         </div>
 

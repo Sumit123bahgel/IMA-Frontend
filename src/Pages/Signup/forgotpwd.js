@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Input, Label } from '../../components/formComponents';
 
 const Forgotpwd = () => {
   const [email,setEmail] = useState('');
-    const [succesmsg,setSuccess] = useState('');
-    const [login, setLogin] = useState(true);
+  const [succesmsg,setSuccess] = useState('');
+  const [login, setLogin] = useState(true);  
 
     function handleClick(event){
       if(email.length > 10){
         setSuccess("we have sent a message on your gmail account!");
-        setLogin(false)
+        setLogin(false);
       }else{
         setSuccess("Please provide valid email address!");
       }
-      event.preventDefault();
     }
 
     function handleChange(event){
@@ -22,35 +20,39 @@ const Forgotpwd = () => {
       setEmail(value);
     }
 
-    const navigate= useNavigate();
-    
-    function Loginpage(){
-        let path  = '/';
-        navigate(path);
-    }
-
-
-
   return (
-    <div className='h-full d-flex justify-content-center align-items-center flex-column'>
 
-      <div className='d-flex justify-center text-center align-items-center flex-column w-50 form-group'>
-        
-        <Label for='email'  className="col-form-label col-form-label-lg text-center text-capitalize mb-5 h2" content= "Email address"/>
-
-        <Input type="email" name='email' value={email} onChange={handleChange} className="form-control p-3 mb-5"  placeholder="Enter your email address"/>
-
-        <button className="btn btn-primary w-50 my-2" onClick={handleClick}>Send a mail</button>
-
-        <button className="btn btn-secondary w-50 my-2" disabled = {login} onClick={Loginpage}>login</button>
-
-        <p className="text-capitalize text-success h4">
-          {succesmsg}
-        </p>
-
+    <div className="modal fade" id="forgotPassword" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div className="modal-dialog modal-dialog-centered">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="staticBackdropLabel">Forgot Password</h5>
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div className="modal-body">
+            
+            <div classNameName="form-group text-center">
+      
+              <Label for='email'  classNameName="col-form-label col-form-label-lg text-center text-capitalize mb-2 h2" content= "Email address"/>
+      
+              <Input type="email" name='email' value={email} onChange={handleChange} classNameName="form-control p-3"  placeholder="Enter your email address"/>
+            </div>
+      
+            <p classNameName="text-capitalize text-success">
+              {succesmsg}
+            </p>
+      
+          </div>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-secondary" data-dismiss="modal" disabled={login}>Login</button>
+            <button type="button" className="btn btn-primary" onClick={handleClick}>Submit</button>
+          </div>
+        </div>
       </div>
-
     </div>
+
   )
 }
 

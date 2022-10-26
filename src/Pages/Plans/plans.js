@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
-import plansData from './plans_data';
+import plansData from '../../data/plans_data';
 import PlanCard from './plans_card';
 import { useNavigate } from 'react-router-dom';
 import CreateNewPlan from './createNewPlan';
@@ -40,7 +40,7 @@ const Plans = () => {
         <CreateNewPlan/>
       </div>
 
-      <div className='d-flex text-capitalize justify-content-left my-3 flex-lg-row flex-column row'>
+      <div className='d-flex text-capitalize justify-content-center my-3 flex-sm-row flex-column row'>
 
         {plansData.map((card, index)=>{
           return createCard(card,index);

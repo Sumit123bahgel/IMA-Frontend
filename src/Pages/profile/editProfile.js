@@ -25,21 +25,21 @@ const EditProfile = () => {
 
                   <Label for="plan_name" content = "Your Name"/>
 
-                  <Input type="text" className='form-control' placeholder='Enter your name' required = 'true'/>
+                  <Input type="text" className='form-control' placeholder='Enter your name' required = {true}/>
 
                 </div>
 
                 <div className='form-group'>
                   <Label for="deposit" content="Email Id" />
 
-                  <Input type="email" className='form-control' name='email' placeholder='Enter your valid email' required = 'true' />
+                  <Input type="email" className='form-control' name='email' placeholder='Enter your valid email' required = {true} />
 
                 </div>
 
                 <div className='form-group'>
                   <Label for="period" content="Phone" />
 
-                  <Input type="number" className='form-control' name='phone' placeholder='Enter your phone number' required = 'true'/>
+                  <Input type="number" className='form-control' name='phone' placeholder='Enter your phone number' required = {true}/>
 
                 </div>
 

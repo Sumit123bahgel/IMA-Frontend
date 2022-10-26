@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { Label, Input } from '../../components/formComponents';
+import Forgotpwd from './forgotpwd';
 
 
 const Login = () => {
@@ -66,8 +67,9 @@ const Login = () => {
 
         <div className="form-group">
 
-          <Link to='/forgot-pwd' className='card-link text-capitalize'>Forgot password?</Link>
-          
+          <span className='card-link text-capitalize text-primary' style={{cursor : 'pointer'}} data-toggle="modal" data-target="#forgotPassword">Forgot password?</span>
+
+          <Forgotpwd/>
         </div>
 
 

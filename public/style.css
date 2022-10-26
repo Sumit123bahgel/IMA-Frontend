@@ -51,7 +51,7 @@ body{
 
 
 @media(min-width : 992px){
-    .dashboard, .ledger, .investment, .users, .plans, .profile, .editProfile, .changePwd, .createNewPlan, .changePwd, .editProfile{
+    .dashboard, .ledger, .investment, .users, .plans, .profile, .people{
         margin-left: 15%;
     }
     

@@ -43,12 +43,6 @@ const CreateNewPlan = () => {
                   <Input type="text" className='form-control' />
                 </div>
 
-                <div className='form-group'>
-                  <Label for= 'maturity' content ='Maturity Period' />
-                  
-                  <Input type="text" className='form-control'  />
-                </div>
-
               </form>
 
             </div>

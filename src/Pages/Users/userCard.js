@@ -6,22 +6,22 @@ const UserCard = (props) => {
     const card = props.user;
 
   return (
-    <div>
-    <div className='d-flex justify-content-around align-items-center h5 border row my-2 mx-1 p-2 btn btn-light rounded' data-toggle="modal" data-target={"#user" + props.cardId}>
+    <>
+    <tr className='' data-toggle="modal" data-target={"#user" + props.cardId}>
       
-      <img src={card.img} alt="img" className='rounded-circle' style={{width : '80px'}}/>
+      <td scope='col'> {card.id} </td>
 
-      <p> {card.name} </p>
+      <td scope='col'> {card.name} </td>
 
-      <p> {card.email} </p>
+      <td scope='col'> {card.email} </td>
 
-      <p> {card.invest} </p>
+      <td scope='col'> {card.invest} </td>
     
-    </div>
+    </tr>
 
     <UserInfo user = {card} cardId = {"user" + props.cardId} />
 
-    </div>
+    </>
   )
 }
 

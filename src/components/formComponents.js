@@ -6,7 +6,7 @@ export function Label(props){
     )
 }
 export function Input(props){
-    const require = props.required === 'true' ? 'true' : 'false'; 
+    const require = props.required === true ? true : false; 
     return (
         <>
             <input 

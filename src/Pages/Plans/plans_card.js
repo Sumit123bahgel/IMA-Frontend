@@ -2,7 +2,7 @@ import React from 'react';
 
 const PlanCard = (props) => {
   return (
-    <div className='d-flex jusify-content-center align-items-center flex-column border border-info rounded-lg p-2 m-3 '>
+    <div className='d-inline text-center border border-info rounded-lg px-3 py-2 m-3 '>
       <h2 className='text-uppercase '> {props.name} </h2>
 
       <p> {props.deposit} </p>
@@ -14,7 +14,9 @@ const PlanCard = (props) => {
       <p> {props.maturity} </p>
 
       <span className='btn btn-primary'> {props.users} </span>
-
+      
+      <button className="btn btn-success d-block w-100 mt-3">Edit plan</button>
+      <button className="btn btn-danger d-block w-100 mt-3">Delete plan</button>
     </div>
   )
 }

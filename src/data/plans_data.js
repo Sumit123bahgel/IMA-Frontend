@@ -7,7 +7,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 10% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'medium',
@@ -15,7 +15,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 15% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -23,7 +23,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -31,7 +31,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -39,7 +39,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -47,7 +47,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -55,7 +55,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -63,7 +63,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -71,7 +71,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -79,7 +79,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -87,7 +87,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -95,7 +95,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -103,7 +103,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -111,7 +111,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -119,7 +119,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -127,7 +127,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -135,7 +135,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -143,7 +143,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -151,7 +151,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -159,7 +159,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -167,7 +167,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -175,7 +175,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -183,7 +183,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -191,7 +191,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -199,7 +199,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -207,7 +207,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -215,7 +215,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -223,7 +223,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -231,7 +231,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -239,7 +239,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -247,7 +247,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -255,7 +255,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
     {
         name : 'ultimate',
@@ -263,7 +263,7 @@ const plansData = [
         period : 'Lock in period 12 months',
         interest :'rate of interest 18% PA',
         maturity : '3 years maturity period',
-        users : 'total no. of users : xxx'
+        users : 'Investors : 0'
     },
 ];
 

@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from './Pages/Signup/Login.js';   //Done - frontend part
 
-import Forgotpwd from './Pages/Signup/forgotpwd.js';   //Done - frontend part
-
 import Dashboard from './Pages/dashboard/dashboard.js';   //Remaining - frontend part
 
 import Nopage from './Pages/nopage/nopage.js';   //Remaining - frontend part
@@ -20,7 +18,7 @@ import Users from './Pages/Users/user.js';   //Remaining - frontend part
 
 import Plans from './Pages/Plans/plans.js';   //Remaining - frontend part
 
-
+import People from './Pages/people/people.js';  // Remaining - frontend part
 
 function App() {
   
@@ -31,8 +29,6 @@ function App() {
      <Routes>
 
       <Route index element={<Login/>} />
-
-      <Route exact path='/forgot-pwd' element={<Forgotpwd/>} />
 
       <Route exact path='/dashboard' element={<Dashboard/>} />
 
@@ -45,6 +41,8 @@ function App() {
       <Route exact path='/users_all' element={<Users/>} />
       
       <Route exact path='/plans_all' element={<Plans/>} />
+
+      <Route exact path='/people' element={<People/>} />
 
       <Route path='/*' element={<Nopage/>} />      
 
