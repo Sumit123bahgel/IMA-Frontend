@@ -27,20 +27,24 @@ const CreateNewPlan = () => {
 
                 <div className='form-group'>
                   <Label for="deposit" content = 'Deposit Policy'/>
+                  <div className='d-flex'>
 
-                  <Input type="text" className='form-control'  />
+                    <Input type="number" className='form-control' placeholder='Maximum' />
+                    <Input type="number" className='form-control' placeholder='Minimum' />
+
+                  </div>         
                 </div>
 
                 <div className='form-group'>
                   <Label for= 'period' content ='Period' />
                   
-                  <Input type="text" className='form-control'  />
+                  <Input type="number" className='form-control'  />
                 </div>
 
                 <div className='form-group'>
                   <Label for= 'interest' content ='Interest' />
                   
-                  <Input type="text" className='form-control' />
+                  <Input type="number" className='form-control' />
                 </div>
 
               </form>
