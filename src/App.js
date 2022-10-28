@@ -30,26 +30,27 @@ function App() {
 
       <Route index element={<Login/>} />
 
-      <Route exact path='/dashboard' element={<Dashboard/>} />
+      <Route path='/dashboard' element={<Dashboard/>} />
 
-      <Route exact path='/user_profile' element={<Profile/>} />
+      <Route path='/user_profile' element={<Profile/>} />
 
-      <Route exact path='/ledger' element={<Ledger/>} />
+      <Route path='/ledger' element={<Ledger/>} />
 
-      <Route exact path='/investments' element={<Investment/>} />
+      <Route path='/investments' element={<Investment/>} />
 
-      <Route exact path='/users_all' element={<Users/>} />
+      <Route path='/users_all' element={<Users/>} />
       
-      <Route exact path='/plans_all' element={<Plans/>} />
+      <Route path='/plans_all' element={<Plans/>} />
 
-      <Route exact path='/people' element={<People/>} />
+      <Route path='/people' element={<People/>} />
 
       <Route path='/*' element={<Nopage/>} />      
 
      </Routes>
 
     </Router>
-  );
+  )
+  
 }
 
 export default App;

@@ -22,7 +22,7 @@ const Plans = () => {
     <>
     <Navbar/>
 
-    <div className='plans p-3'>
+    <div className='marginRight p-3'>
 
       <div className='d-flex justify-content-between align-items-center text-uppercase'>
 

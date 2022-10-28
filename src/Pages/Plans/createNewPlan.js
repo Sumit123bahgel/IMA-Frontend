@@ -4,18 +4,18 @@ import { Label, Input } from '../../components/formComponents'
 const CreateNewPlan = () => {
   return (
     <>        
-      <div class="modal fade" id="createPlan"  tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
+      <div className="modal fade" id="createPlan"  tabIndex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
 
-              <h5 class="modal-title" id="exampleModalLabel">Create New Plan</h5>
+              <h5 className="modal-title" id="exampleModalLabel">Create New Plan</h5>
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
 
               <form >
 
@@ -46,9 +46,9 @@ const CreateNewPlan = () => {
               </form>
 
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Submit</button>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary">Submit</button>
             </div>
           </div>
         </div>

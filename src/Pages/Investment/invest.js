@@ -5,7 +5,7 @@ const Investment = () => {
   return (
     <>
     <Navbar/>
-    <div className='investment'>
+    <div className='marginRight'>
       This is investment
     </div>
     </>

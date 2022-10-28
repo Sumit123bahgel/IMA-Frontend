@@ -9,14 +9,14 @@ const User = () => {
     <>
     <Navbar/>
 
-    <div className='users p-2'>
+    <div className='marginRight p-2'>
       
       <div className='d-flex justify-content-between'>
         <h1 className='text-uppercase'>Users</h1>
         <div className='form-group d-flex justify-content-center align-items-center'>
           <Input type='text' placeholder='Search' className='form-control border' />
           <span className='btn btn-dark'>
-            <i class="fa-solid fa-magnifying-glass"></i> 
+            <i className="fa-solid fa-magnifying-glass"></i> 
           </span>
         </div>
       </div>

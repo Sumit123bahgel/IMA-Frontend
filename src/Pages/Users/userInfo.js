@@ -33,7 +33,7 @@ const UserInfo = (props) => {
                 
                 <h4>All transactions</h4>
 
-                <table class='table table-bordered table-hover table-responsive-lg h-20'>
+                <table className='table table-bordered table-hover table-responsive-lg h-20'>
                   <thead>
                     <tr> 
                       <th scope='col'> Plan Name </th>
@@ -55,9 +55,9 @@ const UserInfo = (props) => {
 
               </div>
 
-              <div class="modal-footer d-flex justify-content-between">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger">Delete User</button>
+              <div className="modal-footer d-flex justify-content-between">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" className="btn btn-danger">Delete User</button>
               </div>
 
             </div>

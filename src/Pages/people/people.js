@@ -8,7 +8,7 @@ const Teams = () => {
   return (
     <>
     <Navbar/>
-      <div className='people p-2'>
+      <div className='marginRight p-2'>
         <div className='d-flex justify-content-between'>
           <h1 className='text-uppercase'>People</h1>
           <div className='form-group d-flex justify-content-center align-items-center'>

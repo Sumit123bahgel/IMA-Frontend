@@ -13,7 +13,7 @@ const Profile = () => {
     <>
     <Navbar/>
 
-    <div className='profile d-flex justify-content-center align-items-center flex-column p-3'>
+    <div className='marginRight d-flex justify-content-center align-items-center flex-column p-3'>
 
         <h1 className='mb-5'>Your Profile</h1>
 

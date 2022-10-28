@@ -5,7 +5,7 @@ const Ledger = () => {
   return (
     <>
       <Navbar/>
-      <div className='ledger'>
+      <div className='marginRight'>
         This is ledger
       </div>
     </>

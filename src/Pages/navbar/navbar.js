@@ -74,17 +74,24 @@ const Navbar = (props) => {
 
               <Link className="nav-link p-2" to="/people">People</Link>
 
+              <Link className="nav-link p-2 text-danger" to="/"> Logout </Link>
+
             </div>
 
         </div>
         
-        <div className='p-2 h4 text-secondary d-flex justify-content-center align-items-center flex-column w-100 '>
+        <div className='p-2 text-light d-flex justify-content-around align-items-center rounded-pill w-100 rounded-lg border border-light'>
         
-            <img src={data.img} alt="user-img" className='w-25 rounded-circle float-start'/>
-
-            <Link to='/user_profile' className='text-success text-decoration-none p-2'>View Profile</Link> 
-
-            <Link to='/' className='text-warning text-decoration-none p-2'>Logout</Link>
+          <div>
+            <img src={data.img} alt="user-img" className='rounded-circle float-start' style={{width: '40px'}}/>
+            <span className={pageSize <= 1380 ? 'd-none' : ''}> {data.name} </span>
+          </div>
+           
+          <div className='h2 m-2'>
+            <Link to='/user_profile'>
+            <i className="fa-solid fa-ellipsis-vertical text-secondary"></i>
+            </Link> 
+          </div>  
 
         </div>
 

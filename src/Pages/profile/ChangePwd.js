@@ -7,20 +7,20 @@ const ChangePwd = () => {
   return (
     <>
       
-      <div class="modal fade" id="cngPwd" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
+      <div className="modal fade" id="cngPwd" data-backdrop="static" data-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
               
-              <h5 class="modal-title" id="staticBackdropLabel">Change Your Password</h5>
+              <h5 className="modal-title" id="staticBackdropLabel">Change Your Password</h5>
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
 
             </div>
 
-            <div class="modal-body">
+            <div className="modal-body">
               
               <div className='my-3'>
                 <Label for='oldPwd' content = 'Old Password' />
@@ -38,9 +38,9 @@ const ChangePwd = () => {
 
             </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Update Password</button>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" className="btn btn-primary">Update Password</button>
             </div>
 
           </div>

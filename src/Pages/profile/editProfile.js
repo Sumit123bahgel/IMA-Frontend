@@ -6,18 +6,18 @@ const EditProfile = () => {
 
   return (
     <>
-      <div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
+      <div className="modal fade" id="editProfile" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
 
-              <h5 class="modal-title" id="exampleModalLabel">Edit Your Profile</h5>
+              <h5 className="modal-title" id="exampleModalLabel">Edit Your Profile</h5>
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
 
               <form>
 
@@ -46,9 +46,9 @@ const EditProfile = () => {
               </form>
 
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
