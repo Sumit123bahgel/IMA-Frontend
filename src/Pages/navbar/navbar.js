@@ -1,48 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import peopleData from '../../data/peopleData';
 
 
-const Navbar = (props) => {
+const Navbar = () => {
   const data = peopleData[0];
   
-  const [pageSize, setPage] = useState( window.innerWidth );
-
-  const [navStyle, setNav] = useState(()=>{
-    return window.innerWidth <= 992 ? 'd-none':''; 
-  });
-
-  function detectWidth(){
-    setPage(window.innerWidth);
-    setNav(()=>{
-      return window.innerWidth <= 992 ? 'd-none':'';
-    })
-  }
   
-  useEffect(() => {
-
-    window.addEventListener('resize',detectWidth);
-    return ()=>{
-      window.removeEventListener('resize',detectWidth);
-    };
-
-  },[pageSize]);
-  
-
-  
-  const [hamStyle, setHam] = useState('');
-  
-  function handleCross(){
-      setNav(()=>{
-        return 'd-none'
-      });
-      setHam('');
-  }
-
-  function handleHam(){
-    setHam('d-none');
-    setNav('');
-  }
 
   return (
     <>
