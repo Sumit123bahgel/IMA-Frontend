@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import ProgressBar from './progressBar.js';
 import Pies from './Pies';
 import Scatters from "./Scatter";
 
@@ -47,8 +47,8 @@ const Cards = () => {
             <h5 className="card-title text-capitalize text-center">Our Stats across the country</h5>
 
             
-            {/* Pie charts implemented */}
-</Pies>
+
+              </Pies>
         
         </div>
         <div className="card-footer">
@@ -61,7 +61,9 @@ const Cards = () => {
 
             
             {/* Scatter Chart implemented */}
-</Scatters>
+
+            </Scatter>
+
         
         </div>
         <div className="card-footer">
