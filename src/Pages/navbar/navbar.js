@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import peopleData from '../../data/peopleData';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
   const data = peopleData[0];
+  
+  const [pageSize, setPage] = useState( window.innerWidth );
+
+  
+
+  function detectWidth(){
+    setPage(window.innerWidth);
+    
+  }
+  
+  useEffect(() => {
+
+    window.addEventListener('resize',detectWidth);
+    return ()=>{
+      window.removeEventListener('resize',detectWidth);
+    };
+
+  },[pageSize]);
+  
+
   
   
 
