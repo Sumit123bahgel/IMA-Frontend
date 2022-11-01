@@ -1,5 +1,8 @@
 import React from 'react';
 import ProgressBar from './progressBar.js';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import Pies from './Pies';
+import Scatters from "./Scatter";
 
 const Cards = () => {
   return (
@@ -44,7 +47,8 @@ const Cards = () => {
             <h5 className="card-title text-capitalize text-center">Our Stats across the country</h5>
 
             
-            {/* Pie charts to be implemented */}
+            {/* Pie chart implemented */}
+</Pies>
         
         </div>
         <div className="card-footer">
@@ -56,7 +60,8 @@ const Cards = () => {
             <h5 className="card-title text-capitalize text-center">Increase in our Investors over the week</h5>
 
             
-            {/* Pie Chart to be implemented */}
+            {/* Scatter Chart implemented */}
+</Scatter>
         
         </div>
         <div className="card-footer">
