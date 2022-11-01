@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
     LineChart,
     Line,
@@ -6,7 +6,6 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend,
     Brush,
     AreaChart,
     Area,
@@ -61,7 +60,7 @@ const Sales = () => {
       ];
   
   return (
-    <div className='w-100 container border border-info p-3'>
+    <div className='w-100 container border border-info p-3 d-flex flex-column gap-3 justify-content-center align-items-center'>
       <h4 className='statement text-center mb-3'>Increase in our weekly Sales</h4>
 
         {/* Weekly Graph implemented */}
