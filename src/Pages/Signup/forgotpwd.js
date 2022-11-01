@@ -22,14 +22,12 @@ const Forgotpwd = () => {
 
   return (
 
-    <div className="modal fade" id="forgotPassword" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div className="modal fade" id="forgotPassword" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="staticBackdropLabel">Forgot Password</h5>
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">
             <form>
@@ -48,7 +46,7 @@ const Forgotpwd = () => {
       
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" data-dismiss="modal" disabled={login}>Login</button>
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" disabled={login}>Login</button>
             <button type="button" className="btn btn-primary" onClick={handleClick}>Submit</button>
           </div>
         </div>

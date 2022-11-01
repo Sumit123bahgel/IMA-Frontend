@@ -27,12 +27,12 @@ const Plans = () => {
       <div className='d-flex justify-content-between align-items-center text-uppercase'>
 
         <h2 className='text-dark '>All Plans</h2>
-        <button className='btn btn-primary btn-success' data-toggle="modal" data-target="#createPlan" >Create New Plan</button>
+        <button className='btn btn-primary btn-success' data-bs-toggle="modal" data-bs-target="#createPlan" >Create New Plan</button>
         
         <CreateNewPlan/>
       </div>
 
-      <div className='d-flex text-capitalize justify-content-center my-3 flex-sm-row flex-column row'>
+      <div className='row justify-content-center'>
 
         {plansData.map((card, index)=>{
           return createCard(card,index);

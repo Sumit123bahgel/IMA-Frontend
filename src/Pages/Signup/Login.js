@@ -46,7 +46,7 @@ const Login = () => {
       <h1>Login</h1>
       <form className='d-flex justify-center flex-column w-50' onSubmit={handleSubmit}>
 
-        <div className="form-group">
+        <div className="mb-3">
           <Label for = "email" content = "Email Address" />
 
           <Input type="email" name="email" className="form-control"  areaDesBy="emailHelp" value={emailPwd.email} onChange={handleChange} placeholder='Enter Your Email id'/>
@@ -55,7 +55,7 @@ const Login = () => {
         </div>
 
 
-        <div className="form-group">
+        <div className="mb-3">
           <Label for="password" content = 'Password' />
 
           <Input type="password" name="password" className="form-control" value={emailPwd.password} onChange={handleChange} placeholder='Password'/>
@@ -65,9 +65,9 @@ const Login = () => {
         </div>
 
 
-        <div className="form-group">
+        <div className="mb-3">
 
-          <span className='card-link text-capitalize text-primary' style={{cursor : 'pointer'}} data-toggle="modal" data-target="#forgotPassword">Forgot password?</span>
+          <span className='card-link text-capitalize text-primary' style={{cursor : 'pointer'}} data-bs-toggle="modal" data-bs-target="#forgotPassword">Forgot password?</span>
 
           <Forgotpwd/>
         </div>

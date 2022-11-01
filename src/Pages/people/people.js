@@ -33,8 +33,9 @@ const Teams = () => {
           </thead>
           <tbody>
             
-            {peopleData.map((card)=>{
+            {peopleData.map((card,index)=>{
               return <PeopleInfo
+                key = {index}
                 info = {card}
               />
             })}

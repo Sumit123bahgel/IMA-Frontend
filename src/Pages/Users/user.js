@@ -9,7 +9,7 @@ const User = () => {
     <>
     <Navbar/>
 
-    <div className='marginRight p-2'>
+    <div className='p-2'>
       
       <div className='d-flex justify-content-between'>
         <h1 className='text-uppercase'>Users</h1>

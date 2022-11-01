@@ -11,6 +11,7 @@ const Profile = () => {
 
   return (
     <>
+    
     <Navbar/>
 
     <div className='marginRight d-flex justify-content-center align-items-center flex-column p-3'>
@@ -34,8 +35,8 @@ const Profile = () => {
 
       <div className='w-100 text-center'>
 
-        <button type="button" className="btn btn-primary btn-lg m-3" data-toggle="modal" data-target="#editProfile" >Edit Profile</button>
-        <button type="button" className="btn btn-secondary btn-lg m-3" data-toggle="modal" data-target="#cngPwd">Change Password</button>
+        <button type="button" className="btn btn-primary btn-lg m-3" data-bs-toggle="modal" data-bs-target="#editProfile" >Edit Profile</button>
+        <button type="button" className="btn btn-secondary btn-lg m-3" data-bs-toggle="modal" data-bs-target="#cngPwd">Change Password</button>
         
       </div>
 

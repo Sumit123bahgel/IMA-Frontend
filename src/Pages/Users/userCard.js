@@ -7,7 +7,7 @@ const UserCard = (props) => {
 
   return (
     <>
-    <tr data-toggle="modal" data-target={"#user" + props.cardId}>
+    <tr data-bs-toggle="modal" data-bs-target={"#user" + props.cardId}>
       
       <td> {card.id} </td>
 

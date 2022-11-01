@@ -14,9 +14,7 @@ const UserInfo = (props) => {
 
                 <h5 className="modal-title" id="ModalLongTitle"> Investor Information </h5>
 
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
 
               <div className="modal-body d-flex  flex-column ">
@@ -56,7 +54,7 @@ const UserInfo = (props) => {
               </div>
 
               <div className="modal-footer d-flex justify-content-between">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" className="btn btn-danger">Delete User</button>
               </div>
 

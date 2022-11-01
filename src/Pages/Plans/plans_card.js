@@ -2,7 +2,7 @@ import React from 'react';
 
 const PlanCard = (props) => {
   return (
-    <div className='d-inline text-center border border-info rounded-lg px-3 py-2 m-3 '>
+    <div className='col-lg-3 col-sm-5 w-auto text-center border border-info rounded-3 px-3 py-2 m-3'>
       <h2 className='text-uppercase '> {props.name} </h2>
 
       <p> {props.deposit} </p>

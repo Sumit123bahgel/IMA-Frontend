@@ -15,23 +15,6 @@ body{
 
                                             /* Navbar section starts from here */
 
-
-.navbar{
-    width: 15%;
-    flex-direction: column;
-    position: fixed;
-    overflow: hidden;
-    background-color: #7952b3;
-    transition: 0.4s;
-    z-index: 9999 !important;
-}
-@media(max-width : 992px) {
-    .navbar{
-        width: 300px;
-    }
-    
-} 
-
 .nav-link{
     font-size: 1.2rem;
     width: 100%;
@@ -50,9 +33,3 @@ body{
                             /* margin left of all sections starts from here */
 
 
-@media(min-width : 992px){
-    .marginRight{
-        margin-left: 15%;
-    }
-    
-}

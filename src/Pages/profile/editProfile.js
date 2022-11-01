@@ -13,15 +13,13 @@ const EditProfile = () => {
 
               <h5 className="modal-title" id="exampleModalLabel">Edit Your Profile</h5>
 
-              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
 
               <form>
 
-                <div className='form-group'>
+                <div className='mb-3'>
 
                   <Label for="plan_name" content = "Your Name"/>
 
@@ -29,14 +27,14 @@ const EditProfile = () => {
 
                 </div>
 
-                <div className='form-group'>
+                <div className='mb-3'>
                   <Label for="deposit" content="Email Id" />
 
                   <Input type="email" className='form-control' name='email' placeholder='Enter your valid email' required = {true} />
 
                 </div>
 
-                <div className='form-group'>
+                <div className='mb-3'>
                   <Label for="period" content="Phone" />
 
                   <Input type="number" className='form-control' name='phone' placeholder='Enter your phone number' required = {true}/>
@@ -47,7 +45,7 @@ const EditProfile = () => {
 
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="button" className="btn btn-primary">Save changes</button>
             </div>
           </div>

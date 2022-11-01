@@ -46,57 +46,53 @@ const Navbar = (props) => {
 
   return (
     <>
-      <div className={'d-lg-none bg-dark p-2 text-light ' + hamStyle } >
-
-        <i className="fa-solid fa-bars fa-2xl" onClick={handleHam}></i>
-
+      <div className="btn btn-outline-light text-secondary rounded-3 " data-bs-toggle="offcanvas" data-bs-target="#Navbar" aria-controls="Navbar">
+        <i className="fa-solid fa-bars fa-2xl"></i>
       </div>
 
-      <nav className = {"navbar p-2 bg-dark h-100 " + navStyle }>
+      <div className="offcanvas offcanvas-start" tabIndex="-1" id="Navbar" aria-labelledby="NavbarLabel">
+        <div className="offcanvas-header">
 
-        <div className="d-flex flex-column w-100 ">
+          <h5 className="offcanvas-title" id="NavbarLabel">Growpital</h5>
 
-            <div className='cross-icon text-right p-2 d-lg-none' onClick={handleCross}>
-              <i className="fa-solid fa-xmark fa-2xl text-warning "></i>
-            </div>
-            
-            <div className="navbar-nav d-flex flex-column ">
-
-              <Link className="nav-link p-2" to="/dashboard">Dashboard</Link>
-
-              <Link className="nav-link p-2" to="/ledger">Ledger</Link>
-
-              <Link className="nav-link p-2" to="/investments">Investment</Link>
-
-              <Link className="nav-link p-2" to="/users_all">Users</Link>
-
-              <Link className="nav-link p-2" to="/plans_all">Plans</Link>
-
-              <Link className="nav-link p-2" to="/people">People</Link>
-
-              <Link className="nav-link p-2 text-danger" to="/"> Logout </Link>
-
-            </div>
+          <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
         </div>
-        
-        <div className='p-2 text-light d-flex justify-content-around align-items-center rounded-pill w-100 rounded-lg border border-light'>
-        
-          <div>
-            <img src={data.img} alt="user-img" className='rounded-circle float-start' style={{width: '40px'}}/>
-            <span className={pageSize <= 1380 ? 'd-none' : ''}> {data.name} </span>
+        <div className="offcanvas-body bg-secondary d-flex justify-content-between flex-column">
+          <div className="d-flex flex-column ">
+
+            <Link className="nav-link p-2" data-bs-dismiss="offcanvas" to="/dashboard">Dashboard</Link>
+
+            <Link className="nav-link p-2" data-bs-dismiss="offcanvas" to="/ledger">Ledger</Link>
+
+            <Link className="nav-link p-2" data-bs-dismiss="offcanvas" to="/investments">Investment</Link>
+
+            <Link className="nav-link p-2" data-bs-dismiss="offcanvas" to="/users_all">Users</Link>
+
+            <Link className="nav-link p-2" data-bs-dismiss="offcanvas" to="/plans_all">Plans</Link>
+
+            <Link className="nav-link p-2" data-bs-dismiss="offcanvas" to="/people">People</Link>
+
+            <Link className="nav-link p-2 text-warning" to="/"> Logout </Link>
+
           </div>
-           
-          <div className='h2 m-2'>
-            <Link to='/user_profile'>
-            <i className="fa-solid fa-ellipsis-vertical text-secondary"></i>
-            </Link> 
-          </div>  
+          <div className='text-light d-flex justify-content-around align-items-center rounded-pill w-100 border border-light'>
 
+            <div className='d-flex justify-content-center align-items-center gap-2'>
+              <img src={data.img} alt="user-img" className='rounded-circle float-start' style={{width: '40px'}}/>
+              <span className={pageSize <= 1380 ? 'd-none' : ''}> {data.name} </span>
+            </div>
+
+            <div className='h2 m-2'>
+              <Link to='/user_profile' data-bs-dismiss="offcanvas">
+              <i className="fa-solid fa-ellipsis-vertical text-light"></i>
+              </Link> 
+            </div>  
+
+          </div>
         </div>
-
-      </nav>
-
+      </div>
+      
     </>
   )
 }
