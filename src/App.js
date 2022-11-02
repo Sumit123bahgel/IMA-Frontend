@@ -20,6 +20,8 @@ import Plans from './Pages/Plans/plans.js';   //Remaining - frontend part
 
 import People from './Pages/people/people.js';  // Remaining - frontend part
 
+import ResetPwd from './Pages/Signup/reset_pwd.js';
+
 function App() {
   
 
@@ -43,6 +45,8 @@ function App() {
       <Route path='/plans_all' element={<Plans/>} />
 
       <Route path='/people' element={<People/>} />
+
+      <Route path='/reset_pwd' element={<ResetPwd/>} />
 
       <Route path='/*' element={<Nopage/>} />      
 

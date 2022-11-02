@@ -6,10 +6,12 @@ import Forgotpwd from './forgotpwd';
 
 
 const Login = () => {
+  
     const [emailPwd , setEmailPwd] = useState({
         email : '',
         password : ''
     });
+
     const [isWrong, setIsWrong] = useState({
         email : '',
         password : ''

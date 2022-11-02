@@ -11,9 +11,7 @@ export function Input(props){
         <>
             <input 
                 type={props.type}
-
                 name={props.name}
-                
                 className={props.className}
                 aria-describedby={props.areaDesBy}
                 value={props.value}

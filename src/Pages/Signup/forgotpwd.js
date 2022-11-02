@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Input, Label } from '../../components/formComponents';
 
@@ -6,10 +7,18 @@ const Forgotpwd = () => {
   const [succesmsg,setSuccess] = useState('');
   const [login, setLogin] = useState(true);  
 
-    function handleClick(event){
+    async function handleClick(){
+
       if(email.length > 10){
-        setSuccess("we have sent a message on your gmail account!");
-        setLogin(false);
+
+        const url = "https://floating-forest-60538.herokuapp.com/v1/auth/forgot-password"
+        const response = await axios.post(url, {email});
+
+        if(response.status === 204){
+          setSuccess("we have sent a message on your gmail account!");
+          setLogin(false);
+        }
+
       }else{
         setSuccess("Please provide valid email address!");
       }
