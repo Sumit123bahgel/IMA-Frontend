@@ -1,9 +1,27 @@
 import React from 'react';
+import userData from '../../data/userData';
+import axios from 'axios';
 
 const UserInfo = (props) => {
 
     const card = props.user;
-    const transaction = props.user.transaction;
+    const transaction = userData[0].transaction;
+
+    async function handleDelete(id){
+
+      if(window.confirm("Are you sure wanna delete this user?")){
+        const token = localStorage.getItem('token');
+        const response = await axios.delete('https://floating-forest-60538.herokuapp.com/v1/users/' + id,{
+          headers: {Authorization : `Bearer ${token}`} 
+        })
+  
+        if(response.status === 204){
+          window.location.reload();
+        }else{
+          window.alert("couldn't delete user! Retry");
+        }
+      }
+    }
 
   return (
     <>
@@ -23,10 +41,10 @@ const UserInfo = (props) => {
                 
                 <div>
                     <p> Email-id : <span> {card.email} </span> </p>
-                    <p> Password : <span> {card.password} </span> </p>
-                    <p> Address : <span> {card.address} </span> </p>
-                    <p> Phone : <span> {card.phone} </span> </p>
-                    <p> Date Of Birth : <span> {card.dob} </span> </p>
+                    <p> Password : <span> {userData[0].password} </span> </p>
+                    <p> Address : <span> {userData[0].address} </span> </p>
+                    <p> Phone : <span> {userData[0].phone} </span> </p>
+                    <p> Date Of Birth : <span> {userData[0].dob} </span> </p>
                 </div>
                 
                 <h4>All transactions</h4>
@@ -46,7 +64,7 @@ const UserInfo = (props) => {
                   </tbody>
                   <tfoot> 
                     <tr>
-                      <td> Invested Amount : {card.invest} </td>
+                      <td> Invested Amount : {card.balance} </td>
                     </tr>
                   </tfoot>
                 </table>
@@ -55,7 +73,7 @@ const UserInfo = (props) => {
 
               <div className="modal-footer d-flex justify-content-between">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-danger">Delete User</button>
+                <button type="button" className="btn btn-danger" onClick={()=> handleDelete(card.id)}>Delete User</button>
               </div>
 
             </div>

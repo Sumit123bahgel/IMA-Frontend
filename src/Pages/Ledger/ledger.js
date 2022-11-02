@@ -1,10 +1,34 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import Navbar from '../navbar/navbar';
-import ledgerData from '../../data/ledgerData';
 import LedgerRow from './ledgerRow';
 import { Input } from '../../components/formComponents';
+import axios from 'axios';
+import Loading from '../../components/Loading';
 
 const Ledger = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  const [result, setResult] = useState([]);
+
+  useEffect(()=>{
+    const token = localStorage.getItem('token');
+    
+    axios.get('https://floating-forest-60538.herokuapp.com/v1/transactions',{ 
+      headers: {Authorization : `Bearer ${token}`} 
+    }).then(response => {setResult(response.data.results); setLoading(false)} );
+
+  },[]);
+
+  if(loading ){
+    return (
+      <>
+      <Navbar/>
+      <Loading/>
+      </>
+    )
+  }
+
   return (
     <>
       <Navbar/>
@@ -21,8 +45,9 @@ const Ledger = () => {
         <table className='table table-responsive-lg table-hover table-bordered table-striped'>
           <thead>
             <tr>
-              <th scope="col">User ID</th>
-              <th scope="col">Date </th>
+              <th scope="col">Transaction Id</th>
+              <th scope="col">Operation</th>
+              <th scope="col">Created At</th>
               <th scope="col">Amount</th>
               <th scope="col">Account Number</th>
               <th scope="col">Destination A/C No</th>
@@ -32,7 +57,7 @@ const Ledger = () => {
           </thead>
           <tbody>
 
-            {ledgerData.map((card,index)=>{
+            {result.map((card,index)=>{
               return <LedgerRow
               key = {index}
               card = {card}

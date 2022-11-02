@@ -4,10 +4,13 @@ const InvestRow = (props) => {
     const card = props.card;
   return (
     <tr>
-      <td> {card.Userid} </td>
-      <td> {card.Date} </td>
-      <td> {card.Principle} </td>
-      <td> {card.Plan_type} </td>
+      <td> {card.user_id} </td>
+
+      <td> {card.date} </td>
+
+      <td> {card.principle} </td>
+
+      <td> {card.planType} </td>
     </tr>
   )
 }

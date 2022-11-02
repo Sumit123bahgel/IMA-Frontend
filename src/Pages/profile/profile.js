@@ -8,6 +8,8 @@ import peopleData from '../../data/peopleData';
 const Profile = () => {
   
   const data = peopleData[0];
+  
+
 
   return (
     <>

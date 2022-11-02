@@ -1,20 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../navbar/navbar';
-import plansData from '../../data/plans_data';
 import PlanCard from './plans_card';
 import CreateNewPlan from './createNewPlan';
+import axios from 'axios';
+import Loading from '../../components/Loading';
 
 const Plans = () => {
+  const [result, setResult] = useState(null);
 
-  function createCard(card,id){
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(()=>{
+    
+    const token = localStorage.getItem('token');
+    axios.get('https://floating-forest-60538.herokuapp.com/v1/plans/',{ 
+      headers: {Authorization : `Bearer ${token}`} 
+
+    } ).then(res => {setResult(res.data.results); setLoading(false)})
+
+  },[])
+
+  if(loading ){
+    return (
+      <>
+      <Navbar/>
+      <Loading/>
+      </>
+    )
+  }
+
+  function createCard(card,index){
     return <PlanCard
-      key = {id}
-      name = {card.name}
-      deposit = {card.deposit}
-      period = {card.period}
-      interest = {card.interest}
-      maturity = {card.maturity}
-      users = {card.users}
+      key = {index}
+      idx = {index}
+      id = {card.id}
+      name = {card.planName}
+      min_amount = {card.min_amount}
+      max_amount = {card.max_amount}
+      interest = {card.ROI}
+      description = {card.description}
+      createdAt = {card.createdAt}
+      updatedAt = {card.updatedAt}
     />
   }
 
@@ -34,7 +60,7 @@ const Plans = () => {
 
       <div className='row justify-content-center'>
 
-        {plansData.map((card, index)=>{
+        {result.map((card, index)=>{
           return createCard(card,index);
         })}
 

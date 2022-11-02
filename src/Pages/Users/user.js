@@ -1,10 +1,52 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Navbar from '../navbar/navbar';
 import UserCard from './userCard.js';
-import userData from '../../data/userData.js';
 import { Input } from '../../components/formComponents';
+import axios from 'axios';
+import { useState } from 'react';
+import Loading from '../../components/Loading';
+
 
 const User = () => {
+  const [search, setSearch] = useState('');
+
+  const [result, setResult] = useState(null);
+
+  function handleSearch(event){
+    const value = event.target.value;
+    setSearch(value);
+  }
+
+  function handleClick(){
+    const token = localStorage.getItem('token');
+    
+    axios.get('https://floating-forest-60538.herokuapp.com/v1/users?name=' + search,{
+      headers: {Authorization : `Bearer ${token}`} 
+    }).then(response => {setResult(response.data.results); setLoading(false)} );
+
+  }
+
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+    const token = localStorage.getItem('token');
+    
+    axios.get('https://floating-forest-60538.herokuapp.com/v1/users?role=user',{ 
+      headers: {Authorization : `Bearer ${token}`} 
+    }).then(response => {setResult(response.data.results); setLoading(false)} );
+
+  },[]);
+
+  if(loading ){
+    return (
+      <>
+      <Navbar/>
+      <Loading/>
+      </>
+    )
+  }
+
   return (
     <>
     <Navbar/>
@@ -12,10 +54,10 @@ const User = () => {
     <div className='p-2'>
       
       <div className='d-flex justify-content-between'>
-        <h1 className='text-uppercase'>Users</h1>
+        <h3 className='text-uppercase'>Users</h3>
         <div className='form-group d-flex justify-content-center align-items-center'>
-          <Input type='text' placeholder='Search' className='form-control border' />
-          <span className='btn btn-dark'>
+          <Input type='text' placeholder='Search' className='form-control border' value={search} onChange={handleSearch}/>
+          <span className='btn btn-dark' onClick={handleClick}>
             <i className="fa-solid fa-magnifying-glass"></i> 
           </span>
         </div>
@@ -31,13 +73,15 @@ const User = () => {
           </tr>
         </thead>
         <tbody>
-          {userData.map((card,index)=>{
+          {result.map((card,index)=>{
            return <UserCard
               cardId = {index}
               key = {index}
               user = {card}
            /> 
           })}
+          
+
         </tbody>
       </table>          
 

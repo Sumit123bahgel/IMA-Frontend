@@ -1,10 +1,34 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import Navbar from '../navbar/navbar';
 import { Input } from '../../components/formComponents';
 import PeopleInfo from './peopleInfo';
-import peopleData from '../../data/peopleData';
+import axios from 'axios';
+import Loading from '../../components/Loading';
 
 const Teams = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  const [result, setResult] = useState([]);
+
+  useEffect(()=>{
+    const token = localStorage.getItem('token');
+    
+    axios.get('https://floating-forest-60538.herokuapp.com/v1/users?role=admin',{ 
+      headers: {Authorization : `Bearer ${token}`} 
+    }).then(response => {setResult(response.data.results); setLoading(false)} );
+
+  },[]);
+
+  if(loading ){
+    return (
+      <>
+      <Navbar/>
+      <Loading/>
+      </>
+    )
+  }
+  
   return (
     <>
     <Navbar/>
@@ -33,7 +57,7 @@ const Teams = () => {
           </thead>
           <tbody>
             
-            {peopleData.map((card,index)=>{
+            {result.map((card,index)=>{
               return <PeopleInfo
                 key = {index}
                 info = {card}

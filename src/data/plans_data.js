@@ -267,4 +267,7 @@ const plansData = [
     },
 ];
 
+
 export default plansData;
+
+

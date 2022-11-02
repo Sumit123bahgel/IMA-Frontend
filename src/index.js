@@ -11,3 +11,4 @@ root.render(
   </React.StrictMode>
 );
 
+// strict mode baad mai hatana hai

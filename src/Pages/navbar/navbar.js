@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import peopleData from '../../data/peopleData';
+
 
 
 const Navbar = (props) => {
   const data = peopleData[0];
   
   const [pageSize, setPage] = useState( window.innerWidth );
-
-  
 
   function detectWidth(){
     setPage(window.innerWidth);
@@ -24,7 +23,26 @@ const Navbar = (props) => {
 
   },[pageSize]);
   
+  
 
+  const navigate = useNavigate(); 
+
+  function logOut(){
+
+    try{
+
+        localStorage.removeItem("refreshToken");
+        localStorage.removeItem("token");
+
+        navigate('/'); 
+
+    }catch(err){
+
+      alert("Couldn't logout. Try again!");
+
+    }
+    
+  }
   
   
 
@@ -57,7 +75,7 @@ const Navbar = (props) => {
 
             <Link className="nav-link p-2" data-bs-dismiss="offcanvas" to="/people">People</Link>
 
-            <Link className="nav-link p-2 text-warning" to="/"> Logout </Link>
+            <span className="nav-link p-2 text-warning" data-bs-dismiss="offcanvas" onClick={logOut}> Logout </span>
 
           </div>
           <div className='text-light d-flex justify-content-around align-items-center rounded-pill w-100 border border-light'>

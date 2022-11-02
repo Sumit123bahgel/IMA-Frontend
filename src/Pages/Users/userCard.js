@@ -9,13 +9,13 @@ const UserCard = (props) => {
     <>
     <tr data-bs-toggle="modal" data-bs-target={"#user" + props.cardId}>
       
-      <td> {card.id} </td>
+      <td> {props.cardId + 1} </td>
 
       <td> {card.name} </td>
 
       <td> {card.email} </td>
 
-      <td> {card.invest} </td>
+      <td> {card.balance} </td>
     
     </tr>
 
