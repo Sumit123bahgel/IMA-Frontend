@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from 'react';
 import { Input, Label } from '../../components/formComponents';
-import axios from 'axios';
 
-const EditPlan = ({idx, oldValues, id}) => {
+const EditPlan = ({idx, oldValues,  submit, }) => {
+
     const [values, setValues] = useState(oldValues);
 
     function handleChange(event){
         const {name,value} = event.target;
+
         setValues((prev)=>{
             return {
                 ...prev,
@@ -16,34 +17,11 @@ const EditPlan = ({idx, oldValues, id}) => {
         })
     }
     
-    async function handleSubmit(event){
+    function handleSubmit(event){
       event.preventDefault();
-
-      const token = localStorage.getItem('token');
-
-    const url = 'https://floating-forest-60538.herokuapp.com/v1/plans/';
-
+      submit(values);
+    }
     
-
-    const response = await axios.patch(url + id, {
-     planName : values.planName,
-     ROI : values.ROI,
-     min_amount : values.min_amount,
-     max_amount : values.max_amount,
-     description : values.description
-    }, {
-      headers: {
-        'Authorization': `Bearer ${token}` 
-      }
-    });
-
-    if(response.status === 200){
-      window.location.reload();
-    }else{
-      window.alert("couldn't update plan! Please retry");
-    }
-      
-    }
 
   return (
     <>
@@ -55,6 +33,7 @@ const EditPlan = ({idx, oldValues, id}) => {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div className="modal-body">
+
               <form onSubmit={handleSubmit}>
 
                 <div className='mb-3'>

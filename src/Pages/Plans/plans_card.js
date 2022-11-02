@@ -1,25 +1,8 @@
-import axios from 'axios';
 import React from 'react';
 import EditPlan from './EditPlan.js';
 
 
 const PlanCard = (props) => {
-  
-  async function handleDelete(id){
-
-    if(window.confirm("Are you sure wanna delete this plan?")){
-      const token = localStorage.getItem('token');
-      const response = await axios.delete('https://floating-forest-60538.herokuapp.com/v1/plans/' + id,{
-        headers: {Authorization : `Bearer ${token}`} 
-      })
-
-      if(response.status === 204){
-        window.location.reload();
-      }else{
-        window.alert("couldn't delete plan! Retry");
-      }
-    }
-  }
 
 
   const values = {
@@ -48,7 +31,7 @@ const PlanCard = (props) => {
       <span className='btn btn-primary w-100'> Investors : 0 </span>
       
       <button className="btn btn-success d-block w-100 mt-3" data-bs-toggle="modal" data-bs-target={"#editPlan" + props.idx}>Edit plan</button>
-      <button className="btn btn-danger d-block w-100 mt-3" onClick={()=> handleDelete(props.id)}>Delete plan</button>
+      <button className="btn btn-danger d-block w-100 mt-3" onClick={()=> props.delete(props.id)}>Delete plan</button>
 
       <div className='mt-2 bg-secondary text-white p-1 rounded-2'>
 
@@ -58,9 +41,8 @@ const PlanCard = (props) => {
 
     </div>
       <EditPlan idx = {props.idx}
-        id = {props.id}
        oldValues = {values}
-
+        submit = {(data)=> props.editPlan(props.id, data)}
        />
     </>
   )
