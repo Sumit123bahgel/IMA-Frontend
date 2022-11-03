@@ -5,8 +5,9 @@ import PeopleInfo from './peopleInfo';
 import axios from 'axios';
 import Loading from '../../components/Loading';
 
-const Teams = () => {
 
+const Teams = () => {
+  
   const [loading, setLoading] = useState(true);
 
   const [result, setResult] = useState([]);
@@ -16,7 +17,11 @@ const Teams = () => {
     
     axios.get('https://floating-forest-60538.herokuapp.com/v1/users?role=admin',{ 
       headers: {Authorization : `Bearer ${token}`} 
-    }).then(response => {setResult(response.data.results); setLoading(false)} );
+    }).then(response => {
+      if(response.status === 401){
+        window.alert("Login Session has been expired. Please Login again!");
+      }
+      setResult(response.data.results); setLoading(false)} );
 
   },[]);
 

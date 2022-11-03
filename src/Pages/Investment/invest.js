@@ -5,8 +5,9 @@ import { Input } from '../../components/formComponents';
 import axios from 'axios';
 import Loading from '../../components/Loading'
 
-const Investment = () => {
 
+const Investment = () => {
+  
   const [loading, setLoading] = useState(true);
 
   const [result, setResult] = useState([]);
@@ -39,11 +40,11 @@ const Investment = () => {
         axios.get('https://floating-forest-60538.herokuapp.com/v1/investments?planType=' + response.data.results[0].id,{
           headers: {Authorization : `Bearer ${token}`} 
         }).then(response => {
-          setResult(response.data.results);
-          setLoading(false);
           if(response.status === 404){
             window.alert("Investments Not Found!");
           }
+          setResult(response.data.results);
+          setLoading(false);
         } );
 
       } );
@@ -53,6 +54,7 @@ const Investment = () => {
     }
 
   }
+  
 
   useEffect(()=>{
     const token = localStorage.getItem('token');
@@ -61,7 +63,12 @@ const Investment = () => {
 
       headers: {Authorization : `Bearer ${token}`} 
 
-    }).then(response => {setResult(response.data.results); setLoading(false) } );
+    }).then(response => {
+      if(response.status === 401){
+        window.alert("Login Session has been expired. Please Login again!");
+      }
+      setResult(response.data.results); setLoading(false);
+    } );
 
   },[]);
 

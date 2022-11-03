@@ -5,7 +5,9 @@ import CreateNewPlan from './createNewPlan';
 import axios from 'axios';
 import Loading from '../../components/Loading';
 
+
 const Plans = () => {
+  
   const [values , setValues] = useState({
     planName : '',
     ROI : 0,
@@ -112,7 +114,11 @@ const Plans = () => {
     axios.get('https://floating-forest-60538.herokuapp.com/v1/plans/',{ 
       headers: {Authorization : `Bearer ${token}`} 
 
-    } ).then(res => {setResult(res.data.results); setLoading(false)})
+    } ).then(res => {
+      if(res.status === 401){
+        window.alert("Login Session has been expired. Please Login again!");
+      }
+      setResult(res.data.results); setLoading(false)})
 
   },[result])
 

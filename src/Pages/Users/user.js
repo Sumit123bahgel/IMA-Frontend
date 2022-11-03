@@ -7,10 +7,11 @@ import { useState } from 'react';
 import Loading from '../../components/Loading';
 
 
+
 const User = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
-
+  
   const [result, setResult] = useState(null);
 
   function handleSearch(event){
@@ -31,8 +32,9 @@ const User = () => {
 
     axios.get('https://floating-forest-60538.herokuapp.com/v1/users?name=' + search,{
       headers: {Authorization : `Bearer ${token}`} 
-    }).then(response => {setResult(response.data.results); setLoading(false)} );
-
+    }).then(response => {
+      setResult(response.data.results); setLoading(false)
+    } );
   }
 
 
@@ -43,9 +45,13 @@ const User = () => {
     
     axios.get('https://floating-forest-60538.herokuapp.com/v1/users?role=user',{ 
       headers: {Authorization : `Bearer ${token}`} 
-    }).then(response => {setResult(response.data.results); setLoading(false)} );
+    }).then(response => {
+      if(response.status === 401){
+        window.alert("Login Session has been expired. Please Login again!");
+      }
+      setResult(response.data.results); setLoading(false)} );
 
-  },[]);
+  },[result]);
 
   if(loading ){
     return (
