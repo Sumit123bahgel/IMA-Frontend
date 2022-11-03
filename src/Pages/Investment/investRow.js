@@ -8,7 +8,7 @@ const InvestRow = (props) => {
 
       <td> {card.createdAt} </td>
 
-      <td> {card.principle} </td>
+      <td> {card.principal} </td>
 
       <td> {card.planType} </td>
     </tr>

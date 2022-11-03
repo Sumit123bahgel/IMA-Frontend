@@ -41,7 +41,7 @@ const Teams = () => {
         <div className='d-flex justify-content-between'>
           <h1 className='text-uppercase'>People</h1>
           <div className='form-group d-flex justify-content-center align-items-center'>
-            <Input type='text' placeholder='Search' className='form-control border' />
+            <Input type='text' placeholder='Name' className='form-control border' />
 
             <span className='btn btn-dark'>
               <i className="fa-solid fa-magnifying-glass"></i> 

@@ -8,10 +8,12 @@ import Loading from '../../components/Loading'
 
 const Investment = () => {
   
+  
   const [loading, setLoading] = useState(true);
 
-  const [result, setResult] = useState([]);
   const [search, setSearch] = useState('');
+  
+  const [result, setResult] = useState(null);
 
 
   function handleSearch(event){
@@ -27,31 +29,40 @@ const Investment = () => {
       window.location.reload();
       return;
     }
-    setLoading(true);
-    const token = localStorage.getItem('token');
-
-    try{
-
+    
+    
+      
+      const token = localStorage.getItem('token');
+      setLoading(true);
     
       axios.get('https://floating-forest-60538.herokuapp.com/v1/plans?planName=' + search,{
         headers: {Authorization : `Bearer ${token}`} 
       }).then(response => {
 
+        if(response.data.results.length === 0){
+
+          window.alert("This Plan doesn't exist!");
+
+          setLoading(false);
+
+        }else{
+
         axios.get('https://floating-forest-60538.herokuapp.com/v1/investments?planType=' + response.data.results[0].id,{
+
           headers: {Authorization : `Bearer ${token}`} 
         }).then(response => {
+
           if(response.status === 404){
             window.alert("Investments Not Found!");
           }
+
           setResult(response.data.results);
           setLoading(false);
         } );
-
+        }
       } );
     
-    }catch(err){
-      console.log(err);
-    }
+    
 
   }
   
@@ -64,12 +75,13 @@ const Investment = () => {
       headers: {Authorization : `Bearer ${token}`} 
 
     }).then(response => {
+
       if(response.status === 401){
         window.alert("Login Session has been expired. Please Login again!");
       }
-      setResult(response.data.results); setLoading(false);
-    } );
 
+      setResult(response.data.results); setLoading(false)} );
+    
   },[]);
 
   if(loading ){
@@ -89,7 +101,7 @@ const Investment = () => {
       <div className='d-flex justify-content-between'>
         <h1 className='text-uppercase'>Investments</h1>
         <div className='form-group d-flex justify-content-center align-items-center'>
-          <Input type='text' placeholder='Search' className='form-control border' value={search} onChange={handleSearch} />
+          <Input type='text' placeholder='Plan Type' className='form-control border' value={search} onChange={handleSearch} />
           <span className='btn btn-dark' onClick={handleClick}>
             <i className="fa-solid fa-magnifying-glass"></i> 
           </span>

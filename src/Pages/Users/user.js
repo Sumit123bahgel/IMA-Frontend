@@ -9,13 +9,17 @@ import Loading from '../../components/Loading';
 
 
 const User = () => {
+
   const [loading, setLoading] = useState(true);
+
   const [search, setSearch] = useState('');
   
   const [result, setResult] = useState(null);
 
   function handleSearch(event){
+
     const value = event.target.value;
+
     if(value.length === 0){
       window.location.reload();
     }
@@ -23,35 +27,46 @@ const User = () => {
   }
 
   function handleClick(){
+
     if(search.length === 0){
       window.location.reload();
       return;
     }
+
     const token = localStorage.getItem('token');
     setLoading(true);
 
     axios.get('https://floating-forest-60538.herokuapp.com/v1/users?name=' + search,{
       headers: {Authorization : `Bearer ${token}`} 
     }).then(response => {
+      if(response.data.results.length === 0){
+        window.alert("User not found!");
+        window.location.reload();
+      }
       setResult(response.data.results); setLoading(false)
     } );
   }
 
 
   
-
+  
   useEffect(()=>{
+    
     const token = localStorage.getItem('token');
+
     
     axios.get('https://floating-forest-60538.herokuapp.com/v1/users?role=user',{ 
+
       headers: {Authorization : `Bearer ${token}`} 
+
     }).then(response => {
+
       if(response.status === 401){
         window.alert("Login Session has been expired. Please Login again!");
       }
       setResult(response.data.results); setLoading(false)} );
-
-  },[result]);
+    
+  },[]);
 
   if(loading ){
     return (
@@ -71,7 +86,7 @@ const User = () => {
       <div className='d-flex justify-content-between'>
         <h3 className='text-uppercase'>Users</h3>
         <div className='form-group d-flex justify-content-center align-items-center'>
-          <Input type='text' placeholder='Search' className='form-control border' value={search} onChange={handleSearch}/>
+          <Input type='text' placeholder='User Name' className='form-control border' value={search} onChange={handleSearch}/>
           <span className='btn btn-dark' onClick={handleClick}>
             <i className="fa-solid fa-magnifying-glass"></i> 
           </span>
@@ -84,7 +99,7 @@ const User = () => {
             <th scope='col'> User Id </th>
             <th scope='col'> User Name </th>
             <th scope='col'> Email id </th>
-            <th scope='col'> Invested </th>
+            <th scope='col'> Balance </th>
           </tr>
         </thead>
         <tbody>

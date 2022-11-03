@@ -8,6 +8,7 @@ import Loading from '../../components/Loading';
 
 const Ledger = () => {
   const [search, setSearch] = useState('');
+  
   const [loading, setLoading] = useState(true);
   
   const [result, setResult] = useState(null);
@@ -52,7 +53,7 @@ const Ledger = () => {
       }
       setResult(response.data.results); setLoading(false)} );
 
-  },[result]);
+  },[]);
 
 
 
@@ -72,7 +73,7 @@ const Ledger = () => {
         <div className='d-flex justify-content-between'>
           <h1 className='text-uppercase'>Transaction</h1>
           <div className='form-group d-flex justify-content-center align-items-center'>
-            <Input type='text' placeholder='Search' className='form-control border' value = {search} onChange = {handleSearch} />
+            <Input type='text' className='form-control border' placeholder= "Account NO." value = {search} onChange = {handleSearch} />
             <span className='btn btn-dark' onClick={handleClickSearch}>
               <i className="fa-solid fa-magnifying-glass"></i> 
             </span>
