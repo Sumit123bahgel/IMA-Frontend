@@ -17,6 +17,8 @@ const Forgotpwd = () => {
         if(response.status === 204){
           setSuccess("we have sent a message on your gmail account!");
           setLogin(false);
+        }else if(response.status === 404){
+          setSuccess("This email doesn't exist!");
         }
 
       }else{

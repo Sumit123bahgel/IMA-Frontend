@@ -4,7 +4,7 @@ import peopleData from '../../data/peopleData';
 
 
 
-const Navbar = (props) => {
+const Navbar = () => {
   const data = peopleData[0];
   
   const [pageSize, setPage] = useState( window.innerWidth );

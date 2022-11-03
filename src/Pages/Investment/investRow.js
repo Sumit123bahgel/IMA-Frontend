@@ -6,7 +6,7 @@ const InvestRow = (props) => {
     <tr>
       <td> {card.user_id} </td>
 
-      <td> {card.date} </td>
+      <td> {card.createdAt} </td>
 
       <td> {card.principle} </td>
 

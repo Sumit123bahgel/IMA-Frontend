@@ -15,11 +15,18 @@ const Investment = () => {
 
   function handleSearch(event){
     const value = event.target.value;
+    if(value.length===0){
+      window.location.reload();
+    }
     setSearch(value);
   }
 
   function handleClick(){
-    
+    if(search.length===0){
+      window.location.reload();
+      return;
+    }
+    setLoading(true);
     const token = localStorage.getItem('token');
 
     try{
@@ -31,7 +38,13 @@ const Investment = () => {
 
         axios.get('https://floating-forest-60538.herokuapp.com/v1/investments?planType=' + response.data.results[0].id,{
           headers: {Authorization : `Bearer ${token}`} 
-        }).then(response => {setResult(response.data.results); setLoading(false)} );
+        }).then(response => {
+          setResult(response.data.results);
+          setLoading(false);
+          if(response.status === 404){
+            window.alert("Investments Not Found!");
+          }
+        } );
 
       } );
     
@@ -67,7 +80,7 @@ const Investment = () => {
     <div className='p-2'>
 
       <div className='d-flex justify-content-between'>
-        <h1 className='text-uppercase'>All Investments</h1>
+        <h1 className='text-uppercase'>Investments</h1>
         <div className='form-group d-flex justify-content-center align-items-center'>
           <Input type='text' placeholder='Search' className='form-control border' value={search} onChange={handleSearch} />
           <span className='btn btn-dark' onClick={handleClick}>
@@ -80,7 +93,7 @@ const Investment = () => {
         <thead>
           <tr>
             <th scope='col'> User Id </th>
-            <th scope='col'> Date </th>
+            <th scope='col'> Created At </th>
             <th scope='col'> Principal </th>
             <th scope='col'> Plan Type </th>
           </tr>

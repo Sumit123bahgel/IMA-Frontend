@@ -6,10 +6,46 @@ import axios from 'axios';
 import Loading from '../../components/Loading';
 
 const Ledger = () => {
-
+  const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
+  
+  const [result, setResult] = useState(null);
+  
+  function handleSearch(event){
+    const value = event.target.value;
+    if(value.length === 0){
+      window.location.reload();
+    }
+    setSearch(value);
+  }
 
-  const [result, setResult] = useState([]);
+  function handleClickSearch(){
+    if(search.length === 0){
+      window.location.reload();
+      return;
+    }
+
+    const token = localStorage.getItem('token');
+    setLoading(true);
+
+    axios.get('https://floating-forest-60538.herokuapp.com/v1/transactions?accountNumber=' + search,{
+      headers: {Authorization : `Bearer ${token}`} 
+    }).then(response => {
+      
+      setResult(response.data.results);
+      setLoading(false);
+
+      if(response.status === 404){
+        window.alert("Not Found!");
+      }
+
+    } );
+
+    
+
+  }
+
+  
 
   useEffect(()=>{
     const token = localStorage.getItem('token');
@@ -19,6 +55,8 @@ const Ledger = () => {
     }).then(response => {setResult(response.data.results); setLoading(false)} );
 
   },[]);
+
+
 
   if(loading ){
     return (
@@ -34,10 +72,10 @@ const Ledger = () => {
       <Navbar/>
       <div className='p-2'>
         <div className='d-flex justify-content-between'>
-          <h1 className='text-uppercase'>All Transaction</h1>
+          <h1 className='text-uppercase'>Transaction</h1>
           <div className='form-group d-flex justify-content-center align-items-center'>
-            <Input type='text' placeholder='Search' className='form-control border' />
-            <span className='btn btn-dark'>
+            <Input type='text' placeholder='Search' className='form-control border' value = {search} onChange = {handleSearch} />
+            <span className='btn btn-dark' onClick={handleClickSearch}>
               <i className="fa-solid fa-magnifying-glass"></i> 
             </span>
           </div>
@@ -45,7 +83,7 @@ const Ledger = () => {
         <table className='table table-responsive-lg table-hover table-bordered table-striped'>
           <thead>
             <tr>
-              <th scope="col">Transaction Id</th>
+              <th scope="col">Reference Id</th>
               <th scope="col">Operation</th>
               <th scope="col">Created At</th>
               <th scope="col">Amount</th>
@@ -56,7 +94,7 @@ const Ledger = () => {
             </tr>
           </thead>
           <tbody>
-
+            
             {result.map((card,index)=>{
               return <LedgerRow
               key = {index}

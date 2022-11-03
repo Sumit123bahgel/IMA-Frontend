@@ -41,19 +41,17 @@ const UserInfo = (props) => {
                 
                 <div>
                     <p> Email-id : <span> {card.email} </span> </p>
-                    <p> Password : <span> {userData[0].password} </span> </p>
                     <p> Address : <span> {userData[0].address} </span> </p>
                     <p> Phone : <span> {userData[0].phone} </span> </p>
-                    <p> Date Of Birth : <span> {userData[0].dob} </span> </p>
                 </div>
                 
-                <h4>All transactions</h4>
+                <h4>All investments</h4>
 
                 <table className='table table-bordered table-hover table-responsive-lg h-20'>
                   <thead>
                     <tr> 
-                      <th scope='col'> Plan Name </th>
-                      <th scope='col'> Amount </th>
+                      <th scope='col'> Plan Type </th>
+                      <th scope='col'> Principal </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -62,11 +60,6 @@ const UserInfo = (props) => {
                         <td> {transaction.amount} </td>
                       </tr>
                   </tbody>
-                  <tfoot> 
-                    <tr>
-                      <td> Invested Amount : {card.balance} </td>
-                    </tr>
-                  </tfoot>
                 </table>
 
               </div>
