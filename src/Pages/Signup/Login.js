@@ -21,8 +21,12 @@ const Login = () => {
     
 
     function handleChange(event){
-        const {name, value} = event.target;
-    
+        let {name, value} = event.target;
+
+        if(name === 'email'){
+          value = value.toLowerCase();
+        }
+
         setEmailPwd((prev)=>{
           return {
             ...prev,

@@ -7,29 +7,46 @@ const Forgotpwd = () => {
   const [succesmsg,setSuccess] = useState('');
   const [login, setLogin] = useState(true);  
 
-    async function handleClick(){
+  async function handleClick(){
 
-      if(email.length > 10){
+    if(email.length > 10){
 
+      try{
         const url = "https://floating-forest-60538.herokuapp.com/v1/auth/forgot-password"
+      
         const response = await axios.post(url, {email});
-
+        
         if(response.status === 204){
           setSuccess("we have sent a message on your gmail account!");
           setLogin(false);
-        }else if(response.status === 404){
-          setSuccess("This email doesn't exist!");
+        }
+        
+        
+        setSuccess("we have sent a message on your gmail account!");
+        setLogin(false);
+        
+
+      }catch(err){
+
+        if(err.response.status === 404){
+          setSuccess("This email doesn't exists!");
         }
 
-      }else{
-        setSuccess("Please provide valid email address!");
       }
+      
+    }else{
+      setSuccess("Please provide valid email address!");
     }
+  }
 
-    function handleChange(event){
-      const value = event.target.value;
-      setEmail(value);
+  function handleChange(event){
+    let value = event.target.value;
+    if(value.length === 0){
+      setSuccess('');
     }
+    value =  value.toLowerCase();
+    setEmail(value);
+  }
 
   return (
 

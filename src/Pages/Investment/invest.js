@@ -35,7 +35,7 @@ const Investment = () => {
       const token = localStorage.getItem('token');
       setLoading(true);
     
-      axios.get('https://floating-forest-60538.herokuapp.com/v1/plans?planName=' + search,{
+      axios.get('https://floating-forest-60538.herokuapp.com/v1/plans?planName=' + search.toLowerCase(),{
         headers: {Authorization : `Bearer ${token}`} 
       }).then(response => {
 
