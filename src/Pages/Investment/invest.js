@@ -8,32 +8,33 @@ import Loading from '../../components/Loading'
 
 const Investment = () => {
   
-  
   const [loading, setLoading] = useState(true);
 
   const [search, setSearch] = useState('');
   
   const [result, setResult] = useState(null);
 
-
   function handleSearch(event){
+
     const value = event.target.value;
+
     if(value.length===0){
       window.location.reload();
     }
+
     setSearch(value);
+
   }
 
   function handleClick(){
+
     if(search.length===0){
       window.location.reload();
       return;
     }
-    
-    
       
-      const token = localStorage.getItem('token');
-      setLoading(true);
+    const token = localStorage.getItem('token');
+    setLoading(true);
     
       axios.get('https://floating-forest-60538.herokuapp.com/v1/plans?planName=' + search.toLowerCase(),{
         headers: {Authorization : `Bearer ${token}`} 
@@ -60,10 +61,7 @@ const Investment = () => {
           setLoading(false);
         } );
         }
-      } );
-    
-    
-
+      } );      
   }
   
 
